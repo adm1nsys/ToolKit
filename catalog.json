@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T12:00:00Z",
+  "updatedAt": "2026-09-19T10:00:00Z",
   "products": [
     {
       "id": "adm1nsys-toolkit",
@@ -11,7 +11,7 @@
       "platforms": ["macOS 14+", "Windows", "Linux glibc", "Linux musl", "Apple Silicon", "Intel"],
       "bundleIdentifiers": ["com.adm1nsys.Adm1nSysToolkit"],
       "availability": "available",
-      "supportedOS": ["macOS 14+", "Windows", "Linux glibc", "Linux musl"],
+      "supportedOS": ["macOS 14+"],
       "productType": "application",
       "applicationNames": ["Adm1nSysToolkit"],
       "isSelf": true,
@@ -19,14 +19,14 @@
       "releases": []
     },
     {
-      "id": "servermaster",
-      "name": "ServerMaster",
+      "id": "servermaster-macos",
+      "name": "ServerMaster · macOS",
       "summary": "A visual control center for local servers.",
       "icon": "server.rack",
       "iconURL": "https://adm1nsys.github.io/ServerMaster/assets/icon.png",
       "latestVersion": "2.0.0",
       "siteURL": "https://adm1nsys.github.io/ServerMaster/",
-      "platforms": ["macOS 14+", "Windows", "Apple Silicon", "Intel"],
+      "platforms": ["macOS 14+", "Apple Silicon", "Intel"],
       "bundleIdentifiers": ["ServerMaster", "com.adm1nsys.ServerMaster"],
       "availability": "available",
       "supportedOS": ["macOS 14+"],
@@ -37,35 +37,89 @@
         { "version": "2.0.0", "publishedAt": "2026-09-13T12:00:00Z", "platform": "macos", "architectures": ["universal"], "downloads": { "macos": "https://github.com/adm1nsys/ServerMaster/releases/download/macos-v2.0.0/ServerMaster-v2.0.0.app.zip" } },
         { "version": "1.2.0", "publishedAt": "2026-09-10T12:00:00Z", "platform": "macos", "architectures": ["universal"], "downloads": { "macos": "https://github.com/adm1nsys/ServerMaster/releases/download/macos-v1.2.0/ServerMaster.v1.2.app.zip" } },
         { "version": "1.1.0", "publishedAt": "2026-09-10T12:00:00Z", "platform": "macos", "architectures": ["universal"], "downloads": { "macos": "https://github.com/adm1nsys/ServerMaster/releases/download/macos-v1.1.0/ServerMaster.v1.1.app.zip" } },
-        { "version": "1.0.0", "publishedAt": "2026-09-10T12:00:00Z", "platform": "macos", "architectures": ["universal"], "downloads": { "macos": "https://github.com/adm1nsys/ServerMaster/releases/download/macos-v1.0.0/ServerMaster.v1.0.app.zip" } },
+        { "version": "1.0.0", "publishedAt": "2026-09-10T12:00:00Z", "platform": "macos", "architectures": ["universal"], "downloads": { "macos": "https://github.com/adm1nsys/ServerMaster/releases/download/macos-v1.0.0/ServerMaster.v1.0.app.zip" } }
+      ]
+    },
+    {
+      "id": "servermaster-windows",
+      "name": "ServerMaster · Windows",
+      "summary": "A visual control center for local servers.",
+      "icon": "server.rack",
+      "iconURL": "https://adm1nsys.github.io/ServerMaster/assets/icon.png",
+      "latestVersion": "2.0.0",
+      "siteURL": "https://adm1nsys.github.io/ServerMaster/",
+      "platforms": ["Windows", "x86_64"],
+      "bundleIdentifiers": [],
+      "availability": "soon",
+      "supportedOS": ["Windows"],
+      "productType": "application",
+      "applicationNames": ["ServerMaster"],
+      "targets": [{ "os": "windows", "architectures": ["x86_64"], "downloadKey": "windows" }],
+      "releases": [
         { "version": "2.0.0", "platform": "windows", "architectures": ["x86_64"], "availability": "soon", "downloads": {} }
       ]
     },
     {
-      "id": "servermaster-cli",
-      "name": "ServerMaster CLI",
+      "id": "servermaster-cli-macos",
+      "name": "ServerMaster CLI · macOS",
       "summary": "A fast terminal companion for automation.",
       "icon": "terminal",
       "iconURL": "https://adm1nsys.github.io/ServerMaster/assets/icon.png",
       "latestVersion": "1.0.0",
       "siteURL": "https://adm1nsys.github.io/ServerMaster/",
-      "platforms": ["macOS", "Linux glibc", "Linux musl"],
+      "platforms": ["macOS 14+", "Apple Silicon"],
       "bundleIdentifiers": [],
       "availability": "available",
-      "supportedOS": ["macOS", "Linux glibc", "Linux musl"],
+      "supportedOS": ["macOS 14+"],
       "productType": "cli",
       "executable": "servermaster",
       "versionArguments": ["-v"],
       "versionedExecutablePrefix": "servermaster-v",
-      "targets": [
-        { "os": "macos", "architectures": ["arm64"], "minimumVersion": "14.0", "downloadKey": "macos" },
-        { "os": "linux", "architectures": ["arm64", "x86_64"], "libc": "glibc", "downloadKey": "linux-glibc" },
-        { "os": "linux", "architectures": ["arm64", "x86_64"], "libc": "musl", "downloadKey": "linux-musl" }
-      ],
+      "targets": [{ "os": "macos", "architectures": ["arm64"], "minimumVersion": "14.0", "downloadKey": "macos" }],
       "releases": [
-        { "version": "1.0.0", "publishedAt": "2026-09-12T12:00:00Z", "platform": "macos", "architectures": ["arm64"], "downloads": { "macos": "https://github.com/adm1nsys/ServerMaster/releases/download/cli-v1.0.0/servermaster-macos-universal.zip" } },
-        { "version": "1.0.0", "publishedAt": "2026-09-12T12:00:00Z", "platform": "linux", "architectures": ["x86_64", "arm64"], "libc": "glibc", "availability": "soon", "downloads": {} },
-        { "version": "1.0.0", "publishedAt": "2026-09-12T12:00:00Z", "platform": "linux", "architectures": ["x86_64", "arm64"], "libc": "musl", "availability": "soon", "downloads": {} }
+        { "version": "1.0.0", "publishedAt": "2026-09-12T12:00:00Z", "platform": "macos", "architectures": ["arm64"], "downloads": { "macos": "https://github.com/adm1nsys/ServerMaster/releases/download/cli-v1.0.0/servermaster-macos-universal.zip" } }
+      ]
+    },
+    {
+      "id": "servermaster-cli-linux-glibc",
+      "name": "ServerMaster CLI · Linux glibc",
+      "summary": "A fast terminal companion for automation.",
+      "icon": "terminal",
+      "iconURL": "https://adm1nsys.github.io/ServerMaster/assets/icon.png",
+      "latestVersion": "1.0.0",
+      "siteURL": "https://adm1nsys.github.io/ServerMaster/",
+      "platforms": ["Linux glibc", "x86_64", "ARM64"],
+      "bundleIdentifiers": [],
+      "availability": "soon",
+      "supportedOS": ["Linux glibc"],
+      "productType": "cli",
+      "executable": "servermaster",
+      "versionArguments": ["-v"],
+      "versionedExecutablePrefix": "servermaster-v",
+      "targets": [{ "os": "linux", "architectures": ["arm64", "x86_64"], "libc": "glibc", "downloadKey": "linux-glibc" }],
+      "releases": [
+        { "version": "1.0.0", "platform": "linux", "architectures": ["x86_64", "arm64"], "libc": "glibc", "availability": "soon", "downloads": {} }
+      ]
+    },
+    {
+      "id": "servermaster-cli-linux-musl",
+      "name": "ServerMaster CLI · Linux musl",
+      "summary": "A fast terminal companion for automation.",
+      "icon": "terminal",
+      "iconURL": "https://adm1nsys.github.io/ServerMaster/assets/icon.png",
+      "latestVersion": "1.0.0",
+      "siteURL": "https://github.com/adm1nsys/ServerMaster",
+      "platforms": ["Linux musl", "x86_64", "ARM64"],
+      "bundleIdentifiers": [],
+      "availability": "soon",
+      "supportedOS": ["Linux musl"],
+      "productType": "cli",
+      "executable": "servermaster",
+      "versionArguments": ["-v"],
+      "versionedExecutablePrefix": "servermaster-v",
+      "targets": [{ "os": "linux", "architectures": ["arm64", "x86_64"], "libc": "musl", "downloadKey": "linux-musl" }],
+      "releases": [
+        { "version": "1.0.0", "platform": "linux", "architectures": ["x86_64", "arm64"], "libc": "musl", "availability": "soon", "downloads": {} }
       ]
     }
   ]
