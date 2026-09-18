@@ -127,90 +127,6 @@
       "applicationNames" : [
         "ServerMaster"
       ],
-      "availability" : "available",
-      "bundleIdentifiers" : [
-        "ServerMaster",
-        "com.adm1nsys.ServerMaster"
-      ],
-      "executable" : "",
-      "icon" : "shippingbox.fill",
-      "iconURL" : "https://adm1nsys.github.io/ServerMaster/assets/icon.png",
-      "id" : "servermaster-macos-1",
-      "isSelf" : true,
-      "latestVersion" : "2.0.0",
-      "name" : "ServerMaster · macOS 1",
-      "platforms" : [
-        "macOS 28+",
-        "Apple Silicon",
-        "Intel"
-      ],
-      "productType" : "application",
-      "releases" : [
-        {
-          "architectures" : [
-            "universal"
-          ],
-          "downloads" : {
-            "macos" : "https://github.com/adm1nsys/ServerMaster/releases/download/macos-v2.0.0/ServerMaster-v2.0.0.app.zip"
-          },
-          "platform" : "macos",
-          "publishedAt" : "2026-09-13T12:00:00Z",
-          "version" : "2.0.0"
-        },
-        {
-          "architectures" : [
-            "universal"
-          ],
-          "downloads" : {
-            "macos" : "https://github.com/adm1nsys/ServerMaster/releases/download/macos-v1.2.0/ServerMaster.v1.2.app.zip"
-          },
-          "platform" : "macos",
-          "publishedAt" : "2026-09-10T12:00:00Z",
-          "version" : "1.2.0"
-        },
-        {
-          "architectures" : [
-            "universal"
-          ],
-          "downloads" : {
-            "macos" : "https://github.com/adm1nsys/ServerMaster/releases/download/macos-v1.1.0/ServerMaster.v1.1.app.zip"
-          },
-          "platform" : "macos",
-          "publishedAt" : "2026-09-10T12:00:00Z",
-          "version" : "1.1.0"
-        },
-        {
-          "architectures" : [
-            "universal"
-          ],
-          "downloads" : {
-            "macos" : "https://github.com/adm1nsys/ServerMaster/releases/download/macos-v1.0.0/ServerMaster.v1.0.app.zip"
-          },
-          "platform" : "macos",
-          "publishedAt" : "2026-09-10T12:00:00Z",
-          "version" : "1.0.0"
-        }
-      ],
-      "siteURL" : "https://adm1nsys.github.io/ServerMaster/",
-      "summary" : "A visual control center for local servers.",
-      "supportedOS" : [
-        "macOS 14+"
-      ],
-      "targets" : [
-        {
-          "architectures" : [
-            "universal"
-          ],
-          "downloadKey" : "macos",
-          "minimumVersion" : "27.0",
-          "os" : "macos"
-        }
-      ]
-    },
-    {
-      "applicationNames" : [
-        "ServerMaster"
-      ],
       "availability" : "soon",
       "bundleIdentifiers" : [
 
@@ -409,5 +325,5 @@
       "versionedExecutablePrefix" : "servermaster-v"
     }
   ],
-  "updatedAt" : "2026-09-18T23:25:25Z"
+  "updatedAt" : "2026-09-18T23:29:37Z"
 }
