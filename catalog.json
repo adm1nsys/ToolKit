@@ -323,40 +323,7 @@
         "-v"
       ],
       "versionedExecutablePrefix" : "servermaster-v"
-    },
-    {
-      "availability" : "available",
-      "bundleIdentifiers" : [
-
-      ],
-      "icon" : "shippingbox.fill",
-      "id" : "new-product",
-      "isSelf" : false,
-      "latestVersion" : "1.0.0",
-      "name" : "New Product",
-      "platforms" : [
-        "t"
-      ],
-      "productType" : "application",
-      "releases" : [
-        {
-          "downloads" : {
-            "macos" : "h"
-          },
-          "platform" : "t",
-          "version" : "10.0"
-        },
-        {
-          "downloads" : {
-            "macos" : "http"
-          },
-          "platform" : "t",
-          "version" : "120.0"
-        }
-      ],
-      "siteURL" : "fg",
-      "summary" : "gg"
     }
   ],
-  "updatedAt" : "2026-09-19T10:00:00Z"
+  "updatedAt" : "2026-09-18T22:51:36Z"
 }
