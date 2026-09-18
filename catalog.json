@@ -202,7 +202,7 @@
             "universal"
           ],
           "downloadKey" : "macos",
-          "minimumVersion" : "27.0",
+          "minimumVersion" : "26.0",
           "os" : "macos"
         }
       ]
