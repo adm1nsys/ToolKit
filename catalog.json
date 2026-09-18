@@ -202,7 +202,7 @@
             "universal"
           ],
           "downloadKey" : "macos",
-          "minimumVersion" : "26.0",
+          "minimumVersion" : "27.0",
           "os" : "macos"
         }
       ]
@@ -409,5 +409,5 @@
       "versionedExecutablePrefix" : "servermaster-v"
     }
   ],
-  "updatedAt" : "2026-09-18T23:21:38Z"
+  "updatedAt" : "2026-09-18T23:25:25Z"
 }
