@@ -132,9 +132,11 @@
         "ServerMaster",
         "com.adm1nsys.ServerMaster"
       ],
-      "icon" : "server.rack",
+      "executable" : "",
+      "icon" : "shippingbox.fill",
       "iconURL" : "https://adm1nsys.github.io/ServerMaster/assets/icon.png",
       "id" : "servermaster-macos-1",
+      "isSelf" : true,
       "latestVersion" : "2.0.0",
       "name" : "ServerMaster · macOS 1",
       "platforms" : [
@@ -407,5 +409,5 @@
       "versionedExecutablePrefix" : "servermaster-v"
     }
   ],
-  "updatedAt" : "2026-09-18T23:05:14Z"
+  "updatedAt" : "2026-09-18T23:21:38Z"
 }
