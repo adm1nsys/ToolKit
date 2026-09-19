@@ -1,0 +1,54 @@
+name: Build Toolkit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mac/**'
+      - '.github/workflows/toolkit-ci.yml'
+  pull_request:
+    paths:
+      - 'mac/**'
+      - '.github/workflows/toolkit-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Build universal app
+        run: |
+          xcodebuild \
+            -project mac/Adm1nSysToolkit.xcodeproj \
+            -scheme Adm1nSysToolkit \
+            -configuration Release \
+            -sdk macosx \
+            -derivedDataPath "$RUNNER_TEMP/ToolkitDerived" \
+            ARCHS="arm64 x86_64" \
+            ONLY_ACTIVE_ARCH=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Verify architectures
+        run: |
+          lipo -info "$RUNNER_TEMP/ToolkitDerived/Build/Products/Release/Adm1nSysToolkit.app/Contents/MacOS/Adm1nSysToolkit"
+
+      - name: Package app
+        run: |
+          ditto -c -k --sequesterRsrc --keepParent \
+            "$RUNNER_TEMP/ToolkitDerived/Build/Products/Release/Adm1nSysToolkit.app" \
+            "$RUNNER_TEMP/Adm1nSysToolkit-universal.app.zip"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Adm1nSysToolkit-universal
+          path: ${{ runner.temp }}/Adm1nSysToolkit-universal.app.zip
