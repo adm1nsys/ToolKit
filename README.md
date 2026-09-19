@@ -1,6 +1,8 @@
-# adm1nsys Toolkit
+# adm1nsysToolKit
 
 The desktop installer and update hub for adm1nsys applications.
+
+Download the latest macOS release from the [adm1nsys Toolkit website](https://adm1nsys.github.io/ToolKit/).
 
 Toolkit is catalog-driven: product metadata, compatible platforms, release history and download links live in `catalog.json`. The app keeps a built-in fallback catalog, detects installed products by bundle identifier, and continues to show local information when the network is unavailable.
 

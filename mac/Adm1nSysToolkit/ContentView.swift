@@ -6,7 +6,7 @@ struct MenuBarStatusView: View {
 
   var body: some View {
     VStack(alignment: .leading, spacing: 8) {
-      Text("adm1nsys Toolkit").font(.headline)
+      Text("adm1nsysToolKit").font(.headline)
       if store.isLoading {
         Label("Checking for updates…", systemImage: "arrow.triangle.2.circlepath")
       } else if store.hasUpdates {
@@ -107,7 +107,7 @@ struct ContentView: View {
         .resizable().scaledToFit().frame(width: 38, height: 38)
         .clipShape(RoundedRectangle(cornerRadius: 9))
       VStack(alignment: .leading, spacing: 2) {
-        Text("adm1nsys Toolkit").font(.headline)
+        Text("adm1nsysToolKit").font(.headline)
         Text("Your applications, one place").font(.caption).foregroundStyle(.secondary)
       }
       Spacer()
@@ -220,7 +220,7 @@ struct LoadScreenView: View {
                   visible ? 1 : 0)
             }
             VStack(spacing: 5) {
-              Text("adm1nsys Toolkit").font(.system(size: 25, weight: .bold, design: .rounded))
+              Text("adm1nsysToolKit").font(.system(size: 25, weight: .bold, design: .rounded))
               Text(AppInfo.versionLine).font(.caption).foregroundStyle(.secondary)
             }
             VStack(spacing: 10) {

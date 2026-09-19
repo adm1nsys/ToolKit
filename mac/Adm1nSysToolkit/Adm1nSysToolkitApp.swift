@@ -116,7 +116,7 @@ struct WindowCenterHelper: NSViewRepresentable {
 
 enum AppInfo {
   static let name =
-    Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String ?? "adm1nsys Toolkit"
+    Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "adm1nsysToolKit"
   static let version =
     Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "—"
   static let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "—"
@@ -644,7 +644,7 @@ struct Release: Codable, Hashable {
 extension Product {
   static let defaults: [Product] = [
     Product(
-      id: "adm1nsys-toolkit", name: "adm1nsys Toolkit",
+      id: "adm1nsys-toolkit", name: "adm1nsysToolKit",
       summary: "The application hub for adm1nsys products.", icon: "shippingbox.fill",
       iconURL: nil, latestVersion: AppInfo.version,
       siteURL: "https://github.com/adm1nsys/ToolKit",
