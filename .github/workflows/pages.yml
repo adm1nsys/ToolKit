@@ -19,7 +19,6 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ hashFiles('web/**') != '' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
