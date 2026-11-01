@@ -488,16 +488,24 @@ struct Release: Codable, Hashable {
           preserveExisting
           ? (product.versionedExecutablePrefix ?? "\(executable)-") + release.version
           : executable
-        let target = URL(fileURLWithPath: "/opt/homebrew/bin/\(targetName)")
+        // ~/.local/bin: user-owned, no admin rights, and not Homebrew's prefix
+        // (/opt/homebrew/bin belongs to brew and does not exist on Intel Macs or without brew)
+        let binDirectory = URL(fileURLWithPath: "\(NSHomeDirectory())/.local/bin")
+        try FileManager.default.createDirectory(at: binDirectory, withIntermediateDirectories: true)
+        let target = binDirectory.appendingPathComponent(targetName)
         if !preserveExisting {
           removeCLIExecutables(for: product)
         }
         try? FileManager.default.removeItem(at: target)
         try FileManager.default.copyItem(at: item, to: target)
+        try FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: target.path)
         operationMessage =
-          preserveExisting
-          ? "\(product.name) \(release.version) installed alongside existing versions."
-          : "\(product.name) \(release.version) installed."
+          (preserveExisting
+            ? "\(product.name) \(release.version) installed alongside existing versions"
+            : "\(product.name) \(release.version) installed")
+          + " to ~/.local/bin/\(targetName)."
+          + (Self.shellPathContains(binDirectory.path)
+            ? "" : " Add it to your PATH: export PATH=\"$HOME/.local/bin:$PATH\"")
       } else {
         let root = URL(fileURLWithPath: "/Applications")
         let installedBeforeUpdate = installedVersions(for: product)
@@ -595,8 +603,40 @@ struct Release: Codable, Hashable {
           .filter { $0.hasPrefix(prefix) }
       }
       for name in Set(names) {
-        try? FileManager.default.removeItem(at: URL(fileURLWithPath: "\(directory)/\(name)"))
+        let path = "\(directory)/\(name)"
+        // Homebrew links its binaries into these folders; never delete a brew-managed one.
+        // Older Toolkit versions copied plain files here, and only those are cleaned up.
+        if let link = try? FileManager.default.destinationOfSymbolicLink(atPath: path),
+          link.contains("/Cellar/") || link.contains("/Caskroom/")
+        {
+          continue
+        }
+        try? FileManager.default.removeItem(at: URL(fileURLWithPath: path))
       }
+    }
+  }
+
+  /// Whether the user's shell will find commands in `directory`: either the login shell's PATH
+  /// has it, or a shell startup file mentions it (interactive shells are not started, they can hang).
+  nonisolated private static func shellPathContains(_ directory: String) -> Bool {
+    let home = NSHomeDirectory()
+    let shell = ProcessInfo.processInfo.environment["SHELL"] ?? "/bin/zsh"
+    let login = Process()
+    let output = Pipe()
+    login.executableURL = URL(fileURLWithPath: shell)
+    login.arguments = ["-l", "-c", "printf %s \"$PATH\""]
+    login.standardOutput = output
+    login.standardError = FileHandle.nullDevice
+    if (try? login.run()) != nil {
+      login.waitUntilExit()
+      let path =
+        String(data: output.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8) ?? ""
+      if path.split(separator: ":").contains(where: { $0 == directory }) { return true }
+    }
+    let startupFiles = [".zshrc", ".zprofile", ".bash_profile", ".bashrc", ".profile"]
+    return startupFiles.contains { name in
+      let text = (try? String(contentsOfFile: "\(home)/\(name)", encoding: .utf8)) ?? ""
+      return text.contains(".local/bin")
     }
   }
 
