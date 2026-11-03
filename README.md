@@ -1,7 +1,14 @@
-<p align="center"><img src="docs/banner.svg" alt="adm1nsys Toolkit" width="100%"></p>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset=".github/readme/banner-light.svg">
+  <img src=".github/readme/banner-dark.svg" alt="adm1nsys Toolkit — My apps and CLI tools in one window" width="100%">
+</picture>
 
-[![Build Toolkit](https://github.com/adm1nsys/ToolKit/actions/workflows/toolkit-ci.yml/badge.svg)](https://github.com/adm1nsys/ToolKit/actions/workflows/toolkit-ci.yml)
-[![Pages](https://github.com/adm1nsys/ToolKit/actions/workflows/pages.yml/badge.svg)](https://adm1nsys.github.io/ToolKit/)
+<p>
+  <a href="https://adm1nsys.github.io/ToolKit/"><img alt="Website" src="https://img.shields.io/badge/Website-070707?style=for-the-badge&logo=safari&logoColor=white"></a>
+  <a href="https://github.com/adm1nsys/ToolKit/releases/latest/download/Adm1nsysToolkit.app.zip"><img alt="Download for macOS" src="https://img.shields.io/badge/Download-macOS-070707?style=for-the-badge&logo=apple&logoColor=white"></a>
+  <a href="https://adm1nsys.github.io/ToolKit/about/#versions"><img alt="All versions" src="https://img.shields.io/badge/All_versions-070707?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="LICENSE"><img alt="License GPL-3.0" src="https://img.shields.io/badge/License-GPL--3.0-070707?style=for-the-badge"></a>
+</p>
 
 A macOS app that installs, updates and rolls back my applications and command-line tools from one window. It reads a catalog from this repository, so new products and releases appear without a new version of the app.
 
@@ -9,7 +16,7 @@ A macOS app that installs, updates and rolls back my applications and command-li
 
 ## Download
 
-**[adm1nsys Toolkit for macOS](https://github.com/adm1nsys/ToolKit/releases/latest)** — macOS 14 or newer, Apple Silicon and Intel.
+**[adm1nsys Toolkit for macOS](https://github.com/adm1nsys/ToolKit/releases/latest/download/Adm1nsysToolkit.app.zip)** — macOS 14.6 or newer, Apple Silicon and Intel.
 
 The app is not notarized, so macOS blocks the first start; the [installation guide](https://adm1nsys.github.io/ToolKit/gatekeeper.html) shows how to allow it.
 
@@ -45,7 +52,7 @@ Toolkit never removes files that Homebrew manages.
 |---|---|
 | [`mac/`](mac) | the SwiftUI app |
 | [`catalog.json`](catalog.json) | the catalog the app downloads |
-| [`web/`](web) | the website: landing page, installation guide, 404 — deployed to GitHub Pages on every push |
+| [`web/`](web) | the website: landing page, installation guide, 404 and the [project page](https://adm1nsys.github.io/ToolKit/about/) (`web/about/`) — deployed to GitHub Pages on every push |
 | [`maceditor/`](maceditor) | my editor for `catalog.json`; for maintaining the catalog, not shipped to users |
 
 ## Build
@@ -56,3 +63,7 @@ xcodebuild -project mac/Adm1nSysToolkit.xcodeproj -scheme Adm1nSysToolkit \
 ```
 
 GitHub Actions builds the same unsigned universal app on every change in `mac/` and keeps it as a build artifact.
+
+## License
+
+[GPL-3.0](LICENSE) © Heorhii Romanenko

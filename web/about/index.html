@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>adm1nsys Toolkit — adm1nsys</title>
+    <meta name="description" content="A macOS app that installs, updates and rolls back my apps and command-line tools from one window, driven by a catalog in the repository.">
+    <meta name="theme-color" content="#070707" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f9f9f9" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/adm1nsys/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/adm1nsys/assets/css/style.css">
+    <link rel="stylesheet" href="/adm1nsys/kit/project.css">
+    <style>
+      .app-head { display: flex; align-items: center; gap: 1rem; }
+      .app-head img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+      .app-head h1 { margin: 0; }
+      .shots { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(.75rem, 3vw, 1.5rem); margin: 0 0 clamp(2rem, 5vw, 3rem); }
+      .shots figure { margin: 0; }
+      .shots img { width: 100%; height: auto; display: block; }
+      .shots figcaption { margin-top: .5rem; font-size: .85rem; color: var(--muted); text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div class="backdrop backdrop-short" aria-hidden="true"></div>
+
+    <main class="wrap">
+      <header class="page-head">
+        <p class="eyebrow">macOS · SwiftUI · Installer</p>
+        <div class="app-head">
+          <img src="../icon-iOS-Default-1024@1x.png" alt="" width="1024" height="1024">
+          <h1>adm1nsys Toolkit</h1>
+        </div>
+        <p class="lead" data-i18n="lead"></p>
+        <div class="actions">
+          <a class="btn btn-primary" data-download="Adm1nsysToolkit.app.zip"
+             href="https://github.com/adm1nsys/ToolKit/releases/latest/download/Adm1nsysToolkit.app.zip">
+            <span data-i18n="download"></span>
+          </a>
+          <a class="btn" href="../" target="_blank" rel="noopener"><span data-i18n="siteBtn"></span> ↗</a>
+          <a class="btn btn-ghost" href="https://github.com/adm1nsys/ToolKit" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <p class="meta" data-i18n="meta"></p>
+      </header>
+
+      <div class="shots">
+        <figure><img src="../scrrenshot1.png" data-i18n-alt="shot1Alt" width="1124" height="1888"><figcaption data-i18n="shot1Cap"></figcaption></figure>
+        <figure><img src="../screenshot2.png" data-i18n-alt="shot2Alt" width="1124" height="1888"><figcaption data-i18n="shot2Cap"></figcaption></figure>
+      </div>
+
+      <div class="folds">
+        <details class="card fold" open>
+          <summary><span data-i18n="whyTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body" data-i18n-html="whyBody"></div>
+        </details>
+
+        <details class="card fold">
+          <summary><span data-i18n="whereTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th></th><th data-i18n="thWhere"></th></tr></thead>
+                <tbody>
+                  <tr><td data-i18n="rowApp"></td><td><code>/Applications/&lt;Name&gt;.app</code><br><span data-i18n="rowAppOld"></span></td></tr>
+                  <tr><td data-i18n="rowCli"></td><td><code>~/.local/bin/&lt;tool&gt;</code><br><span data-i18n="rowCliOld"></span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div data-i18n-html="whereBody"></div>
+          </div>
+        </details>
+
+        <details class="card fold">
+          <summary><span data-i18n="catalogTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body" data-i18n-html="catalogBody"></div>
+        </details>
+
+        <details class="card fold">
+          <summary><span data-i18n="installTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body" data-i18n-html="installBody"></div>
+        </details>
+
+        <details class="card fold">
+          <summary><span data-i18n="buildTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body">
+            <div data-i18n-html="buildBody"></div>
+<pre><code>xcodebuild -project mac/Adm1nSysToolkit.xcodeproj -scheme Adm1nSysToolkit \
+  -configuration Release ARCHS="arm64 x86_64" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO build</code></pre>
+          </div>
+        </details>
+
+        <details class="card fold" id="versions" open>
+          <summary><span data-i18n="versionsTitle"></span><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="fold-body" data-releases></div>
+        </details>
+      </div>
+    </main>
+
+    <script>
+      const REPO = 'https://github.com/adm1nsys/ToolKit';
+      const file = (path, label = path) => `<a href="${REPO}/blob/main/${path}" target="_blank" rel="noopener"><code>${label}</code></a>`;
+      const GUIDE = '<a href="../gatekeeper.html" target="_blank" rel="noopener">';
+      window.PROJECT = {
+        repo: 'adm1nsys/ToolKit',
+        license: 'GPL-3.0',
+        langs: ['de', 'en'],
+        fallback: [{ label: 'Adm1nsysToolkit.app.zip', url: `${REPO}/releases/latest/download/Adm1nsysToolkit.app.zip` }],
+        i18n: {
+          de: {
+            lead: 'Eine macOS-App, die meine Programme und Kommandozeilen-Tools aus einem Fenster installiert, aktualisiert und auf ältere Versionen zurücksetzt. Was es gibt, steht in einem Katalog im Repository — neue Produkte und Versionen erscheinen ohne neue App.',
+            download: 'Für macOS laden',
+            siteBtn: 'Website des Projekts',
+            meta: 'Swift · SwiftUI · macOS 14.6+ · Apple Silicon & Intel · GPL-3.0',
+            shot1Alt: 'Toolkit mit der Produktliste', shot1Cap: 'Alle Produkte auf einen Blick',
+            shot2Alt: 'Toolkit mit geöffneter Versionsverwaltung für ServerMaster', shot2Cap: 'Versionsverwaltung: installieren oder zurücksetzen',
+            whyTitle: 'Warum es Toolkit gibt',
+            whyBody: `<p>Meine Projekte erscheinen als Releases auf GitHub: Apps, Kommandozeilen-Tools, Builds für mehrere Plattformen. Wer sie nutzen will, muss die richtige Datei finden, entpacken, an die richtige Stelle legen — und beim nächsten Update alles noch einmal. Toolkit nimmt das ab.</p><ul><li>Zeigt jedes Produkt aus dem Katalog, ob es installiert ist und in welcher Version — auch offline, aus einem eingebauten Ersatzkatalog.</li><li>Installiert die neueste Version oder eine ältere; mehrere Versionen können nebeneinander bleiben.</li><li>Blendet aus, was auf diesem Mac nicht läuft (macOS-Version, Prozessor).</li><li>Speichert ein Release-Archiv auf Wunsch einfach an einem eigenen Ort, statt es zu installieren.</li></ul><p>Die <strong>Website des Projekts</strong> ist die Seite für Nutzer — mit Download und Installationsanleitung. Diese Seite hier erzählt, wie Toolkit gebaut ist.</p>`,
+            whereTitle: 'Wohin installiert wird',
+            thWhere: 'Ziel',
+            rowApp: 'App', rowAppOld: 'ältere Versionen als <Name> v1.2.0.app',
+            rowCli: 'Kommandozeilen-Tool', rowCliOld: 'ältere Versionen als <tool>-v1.0.0',
+            whereBody: `<p>Kommandozeilen-Tools landen in <code>~/.local/bin</code>: der Ordner gehört dem Nutzer, braucht keine Administratorrechte und liegt außerhalb von Homebrew. Fehlt er im <code>PATH</code>, sagt Toolkit das nach der Installation.</p><p>Version 1.0.0 hat Tools noch nach <code>/opt/homebrew/bin</code> gelegt und dort eine gleichnamige Homebrew-Verknüpfung ersetzen können. Seit <strong>1.0.1</strong> bleibt Homebrews Ordner unangetastet, und Dateien, die Homebrew verwaltet, löscht Toolkit nie.</p>`,
+            catalogTitle: 'Der Katalog',
+            catalogBody: `<p>${file('catalog.json')} ist die einzige Quelle: Produktdaten, unterstützte Plattformen, Versionsgeschichte und Download-Links. Jede Plattform-Variante ist eine eigene Karte — <code>targets</code> nennt Betriebssystem, Prozessor und unter Linux die C-Bibliothek (glibc oder musl); <code>releases</code> enthält die Versionen dieser Karte. Plattformen, die noch nicht erschienen sind, tragen <code>soon</code> und keinen Link.</p><p>Gepflegt wird der Katalog mit einem eigenen kleinen Editor in ${file('maceditor', 'maceditor/')} — er ist für mich, nicht für Nutzer.</p>`,
+            installTitle: 'Erster Start',
+            installBody: `<p>Die App ist nicht notarisiert, deshalb blockiert macOS den ersten Start. Die ${GUIDE}Installationsanleitung</a> zeigt Schritt für Schritt, wie man sie in den Systemeinstellungen freigibt.</p>`,
+            buildTitle: 'Selbst bauen',
+            buildBody: `<p>Die App liegt in ${file('mac', 'mac/')}. GitHub Actions baut bei jeder Änderung dort dieselbe unsignierte Universal-App (Apple Silicon und Intel) und hebt sie als Build-Artefakt auf. Lokal:</p>`,
+            versionsTitle: 'Versionen',
+            title: 'adm1nsys Toolkit — adm1nsys'
+          },
+          en: {
+            lead: 'A macOS app that installs, updates and rolls back my apps and command-line tools from one window. What exists is listed in a catalog in the repository — new products and versions show up without a new app.',
+            download: 'Download for macOS',
+            siteBtn: 'Project website',
+            meta: 'Swift · SwiftUI · macOS 14.6+ · Apple Silicon & Intel · GPL-3.0',
+            shot1Alt: 'Toolkit with the product list', shot1Cap: 'Every product at a glance',
+            shot2Alt: 'Toolkit with version control open for ServerMaster', shot2Cap: 'Version control: install or roll back',
+            whyTitle: 'Why Toolkit exists',
+            whyBody: `<p>My projects ship as GitHub releases: apps, command-line tools, builds for several platforms. To use them you have to find the right file, unpack it, put it in the right place — and do it all again on the next update. Toolkit does that for you.</p><ul><li>Shows every product in the catalog, whether it is installed and in which version — even offline, from a built-in fallback catalog.</li><li>Installs the latest version or an older one; several versions can stay side by side.</li><li>Hides what does not run on this Mac (macOS version, CPU).</li><li>Can simply save a release archive to a place of your choice instead of installing it.</li></ul><p>The <strong>project website</strong> is the page for users — with the download and the installation guide. This page tells how Toolkit is built.</p>`,
+            whereTitle: 'Where things go',
+            thWhere: 'Destination',
+            rowApp: 'App', rowAppOld: 'older versions as <Name> v1.2.0.app',
+            rowCli: 'Command-line tool', rowCliOld: 'older versions as <tool>-v1.0.0',
+            whereBody: `<p>Command-line tools go to <code>~/.local/bin</code>: the folder belongs to the user, needs no administrator rights and stays out of Homebrew. If it is not in your <code>PATH</code> yet, Toolkit says so after the install.</p><p>Version 1.0.0 still put tools into <code>/opt/homebrew/bin</code> and could replace a Homebrew link of the same name there. Since <strong>1.0.1</strong> Homebrew’s folder is left alone, and Toolkit never deletes files that Homebrew manages.</p>`,
+            catalogTitle: 'The catalog',
+            catalogBody: `<p>${file('catalog.json')} is the single source of truth: product data, supported platforms, release history and download links. Each platform variant is its own card — <code>targets</code> names the operating system, the CPU and, on Linux, the C library (glibc or musl); <code>releases</code> holds that card’s versions. Platforms that are not out yet are marked <code>soon</code> and have no link.</p><p>The catalog is maintained with my own small editor in ${file('maceditor', 'maceditor/')} — it is for me, not for users.</p>`,
+            installTitle: 'First launch',
+            installBody: `<p>The app is not notarized, so macOS blocks the first launch. The ${GUIDE}installation guide</a> shows step by step how to allow it in System Settings.</p>`,
+            buildTitle: 'Build it yourself',
+            buildBody: `<p>The app lives in ${file('mac', 'mac/')}. On every change there, GitHub Actions builds the same unsigned universal app (Apple Silicon and Intel) and keeps it as a build artifact. Locally:</p>`,
+            versionsTitle: 'Versions',
+            title: 'adm1nsys Toolkit — adm1nsys'
+          }
+        }
+      };
+    </script>
+    <script src="/adm1nsys/kit/project.js"></script>
+  </body>
+</html>
