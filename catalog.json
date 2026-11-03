@@ -11,24 +11,42 @@
       "icon" : "shippingbox.fill",
       "id" : "adm1nsys-toolkit",
       "isSelf" : true,
-      "latestVersion" : "1.0.0",
+      "latestVersion" : "1.0.1",
       "name" : "adm1nsys Toolkit",
       "platforms" : [
-        "macOS 14+",
-        "Windows",
-        "Linux glibc",
-        "Linux musl",
+        "macOS 14.6+",
         "Apple Silicon",
         "Intel"
       ],
       "productType" : "application",
       "releases" : [
-
+        {
+          "architectures" : [
+            "universal"
+          ],
+          "downloads" : {
+            "macos" : "https://github.com/adm1nsys/ToolKit/releases/download/toolkit-v1.0.1-macos/Adm1nsysToolkit.app.zip"
+          },
+          "platform" : "macos",
+          "publishedAt" : "2026-11-03T14:31:08Z",
+          "version" : "1.0.1"
+        },
+        {
+          "architectures" : [
+            "universal"
+          ],
+          "downloads" : {
+            "macos" : "https://github.com/adm1nsys/ToolKit/releases/download/toolkit-v1.0.0-macos/Adm1nsysToolkit.app.zip"
+          },
+          "platform" : "macos",
+          "publishedAt" : "2026-09-19T12:34:58Z",
+          "version" : "1.0.0"
+        }
       ],
-      "siteURL" : "https://github.com/adm1nsys/ToolKit",
+      "siteURL" : "https://adm1nsys.github.io/ToolKit/",
       "summary" : "The application hub for adm1nsys products.",
       "supportedOS" : [
-        "macOS 14+"
+        "macOS 14.6+"
       ],
       "targets" : [
         {
@@ -325,5 +343,5 @@
       "versionedExecutablePrefix" : "servermaster-v"
     }
   ],
-  "updatedAt" : "2026-09-18T23:29:37Z"
+  "updatedAt" : "2026-11-03T14:31:08Z"
 }
