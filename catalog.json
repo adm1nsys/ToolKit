@@ -145,14 +145,14 @@
       "applicationNames" : [
         "ServerMaster"
       ],
-      "availability" : "soon",
+      "availability" : "available",
       "bundleIdentifiers" : [
 
       ],
       "icon" : "server.rack",
       "iconURL" : "https://adm1nsys.github.io/ServerMaster/assets/icon.png",
       "id" : "servermaster-windows",
-      "latestVersion" : "2.0.0",
+      "latestVersion" : "1.0.0",
       "name" : "ServerMaster · Windows",
       "platforms" : [
         "Windows",
@@ -164,12 +164,12 @@
           "architectures" : [
             "x86_64"
           ],
-          "availability" : "soon",
           "downloads" : {
-            "macos" : ""
+            "windows" : "https://github.com/adm1nsys/ServerMaster/releases/download/windows-v1.0.0/servermaster-windows-x64.zip"
           },
           "platform" : "windows",
-          "version" : "2.0.0"
+          "publishedAt" : "2026-10-26T00:57:36Z",
+          "version" : "1.0.0"
         }
       ],
       "siteURL" : "https://adm1nsys.github.io/ServerMaster/",
@@ -343,5 +343,5 @@
       "versionedExecutablePrefix" : "servermaster-v"
     }
   ],
-  "updatedAt" : "2026-11-03T14:31:08Z"
+  "updatedAt" : "2026-11-05T12:00:00Z"
 }
